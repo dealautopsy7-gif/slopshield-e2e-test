@@ -39,5 +39,14 @@ export async function processData(data) {
   } catch (err) {
     throw err;
   }
-}// E2E slop test
+}
 
+// 6. Added specifically for E2E testing
+// Runs the process
+export async function runProcess() {
+  try {
+    return await Promise.resolve();
+  } catch (err) {
+    throw err;
+  }
+}
