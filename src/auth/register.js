@@ -1,6 +1,6 @@
-import { cleanUsername } from '../helpers/cleanUsername.js';
+import { normalizeUsername } from '../utils/normalizeUsername.js';
 
 export function handleRegistration(body) {
-  const username = cleanUsername(body.username);
+  const username = normalizeUsername(body.username);
   return { registered: true, username };
 }

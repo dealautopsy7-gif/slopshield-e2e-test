@@ -1,6 +1,6 @@
-import { cleanUsername } from '../helpers/cleanUsername.js';
+import { normalizeUsername } from '../utils/normalizeUsername.js';
 
 export function updateSettings(user, newNick) {
-  const sanitized = cleanUsername(newNick);
+  const sanitized = normalizeUsername(newNick);
   return { updated: true, nick: sanitized };
 }
