@@ -1,6 +1,2 @@
-export function formatUsername(userStr) {
-  if (!userStr || typeof userStr !== 'string') {
-    return '';
-  }
-  return userStr.trim().toLowerCase();
-}
+// Consolidated into canonical src/utils/normalizeUsername.js
+export { normalizeUsername as formatUsername } from '../utils/normalizeUsername.js';
