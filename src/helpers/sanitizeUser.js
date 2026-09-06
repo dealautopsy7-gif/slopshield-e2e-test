@@ -2,7 +2,6 @@ export function sanitizeUsername(u) {
   if (!u || typeof u !== 'string') {
     return '';
   }
-  // Trim the username
   const trimmed = u.trim();
   return trimmed.toLowerCase();
 }
