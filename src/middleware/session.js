@@ -1,6 +1,6 @@
-import { formatUsername } from '../lib/formatUsername.js';
+import { normalizeUsername } from '../utils/normalizeUsername.js';
 
 export function attachSessionUser(session, raw) {
-  session.user = formatUsername(raw);
+  session.user = normalizeUsername(raw);
   return session;
 }
