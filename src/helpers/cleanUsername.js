@@ -1,6 +1,2 @@
-export function cleanUsername(rawInput) {
-  if (!rawInput || typeof rawInput !== 'string') {
-    return '';
-  }
-  return rawInput.trim().toLowerCase();
-}
+// Consolidated into canonical src/utils/normalizeUsername.js
+export { normalizeUsername as cleanUsername } from '../utils/normalizeUsername.js';
