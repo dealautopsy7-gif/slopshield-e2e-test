@@ -1,3 +1,4 @@
+import { sanitizeUsername, wrapNormalize } from './src/helpers/sanitizeUsername.js';
 import assert from 'node:assert';
 import { normalizeUsername } from './src/utils/normalizeUsername.js';
 import { cleanUsername } from './src/helpers/cleanUsername.js';
@@ -32,6 +33,12 @@ async function runTests() {
   assert.strictEqual(normalizeUsername(null), '');
   assert.strictEqual(cleanUsername(null), '');
   assert.strictEqual(formatUsername(null), '');
+
+  // New sanitization utilities
+  assert.strictEqual(sanitizeUsername('  Alice_123  '), 'alice_123');
+  assert.strictEqual(wrapNormalize('  Alice_123  '), 'alice_123');
+  assert.strictEqual(sanitizeUsername(null), '');
+  assert.strictEqual(wrapNormalize(null), '');
 
   // Callers of normalizeUsername
   assert.deepStrictEqual(handleLogin({ username: ' Bob ' }), { ok: true, user: 'bob' });
